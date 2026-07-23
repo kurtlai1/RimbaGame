@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://fer58pttbcws"]
+
+[ext_resource type="PackedScene" uid="uid://b1f3x7ml8len4" path="res://terrainAsset/rockFloor1.tscn" id="1_fpaqb"]
+[ext_resource type="PackedScene" uid="uid://jburwd47s5oi" path="res://mcAsset/mcGreen1.tscn" id="2_tay04"]
+[ext_resource type="Script" uid="uid://yynt7yphu66h" path="res://levelAsset/control.gd" id="3_tay04"]
+
+[node name="Node2D" type="Node2D" unique_id=754746964]
+
+[node name="World" type="Node2D" parent="." unique_id=464595670]
+
+[node name="rockFloor13" parent="World" unique_id=62646710 instance=ExtResource("1_fpaqb")]
+position = Vector2(624, -48)
+
+[node name="rockFloor3" parent="World" unique_id=1891629471 instance=ExtResource("1_fpaqb")]
+position = Vector2(64, 32)
+
+[node name="rockFloor2" parent="World" unique_id=1763628658 instance=ExtResource("1_fpaqb")]
+position = Vector2(32, 32)
+
+[node name="rockFloor" parent="World" unique_id=403980601 instance=ExtResource("1_fpaqb")]
+position = Vector2(0, 32)
+
+[node name="rockFloor4" parent="World" unique_id=1758819189 instance=ExtResource("1_fpaqb")]
+position = Vector2(144, -16)
+
+[node name="rockFloor5" parent="World" unique_id=871801398 instance=ExtResource("1_fpaqb")]
+position = Vector2(176, -16)
+
+[node name="rockFloor6" parent="World" unique_id=1910659733 instance=ExtResource("1_fpaqb")]
+position = Vector2(208, -16)
+
+[node name="rockFloor7" parent="World" unique_id=1492373369 instance=ExtResource("1_fpaqb")]
+position = Vector2(240, -16)
+
+[node name="rockFloor8" parent="World" unique_id=407285097 instance=ExtResource("1_fpaqb")]
+position = Vector2(272, -16)
+
+[node name="rockFloor9" parent="World" unique_id=259797532 instance=ExtResource("1_fpaqb")]
+position = Vector2(304, -16)
+
+[node name="rockFloor10" parent="World" unique_id=1988681457 instance=ExtResource("1_fpaqb")]
+position = Vector2(336, -16)
+
+[node name="rockFloor11" parent="World" unique_id=1586524827 instance=ExtResource("1_fpaqb")]
+position = Vector2(96, 32)
+
+[node name="rockFloor12" parent="World" unique_id=1552114638 instance=ExtResource("1_fpaqb")]
+position = Vector2(128, 32)
+
+[node name="rockFloor14" parent="World" unique_id=950474721 instance=ExtResource("1_fpaqb")]
+position = Vector2(368, -16)
+
+[node name="rockFloor17" parent="World" unique_id=1710948863 instance=ExtResource("1_fpaqb")]
+position = Vector2(368, 144)
+
+[node name="rockFloor18" parent="World" unique_id=2117587202 instance=ExtResource("1_fpaqb")]
+position = Vector2(400, 144)
+
+[node name="rockFloor19" parent="World" unique_id=1485077261 instance=ExtResource("1_fpaqb")]
+position = Vector2(432, 144)
+
+[node name="rockFloor20" parent="World" unique_id=105094037 instance=ExtResource("1_fpaqb")]
+position = Vector2(464, 144)
+
+[node name="rockFloor21" parent="World" unique_id=1006717188 instance=ExtResource("1_fpaqb")]
+position = Vector2(496, 144)
+
+[node name="rockFloor22" parent="World" unique_id=1526364843 instance=ExtResource("1_fpaqb")]
+position = Vector2(528, 144)
+
+[node name="rockFloor23" parent="World" unique_id=2114663164 instance=ExtResource("1_fpaqb")]
+position = Vector2(560, 144)
+
+[node name="rockFloor24" parent="World" unique_id=954693603 instance=ExtResource("1_fpaqb")]
+position = Vector2(592, 144)
+
+[node name="rockFloor25" parent="World" unique_id=1608537266 instance=ExtResource("1_fpaqb")]
+position = Vector2(624, 144)
+
+[node name="rockFloor26" parent="World" unique_id=686500222 instance=ExtResource("1_fpaqb")]
+position = Vector2(656, 144)
+
+[node name="rockFloor15" parent="World" unique_id=1724621982 instance=ExtResource("1_fpaqb")]
+position = Vector2(400, -16)
+
+[node name="rockFloor16" parent="World" unique_id=1256278546 instance=ExtResource("1_fpaqb")]
+position = Vector2(432, -16)
+
+[node name="rockFloor27" parent="World" unique_id=175659457 instance=ExtResource("1_fpaqb")]
+position = Vector2(48, 144)
+
+[node name="rockFloor28" parent="World" unique_id=188394169 instance=ExtResource("1_fpaqb")]
+position = Vector2(80, 144)
+
+[node name="rockFloor29" parent="World" unique_id=1453429472 instance=ExtResource("1_fpaqb")]
+position = Vector2(112, 144)
+
+[node name="rockFloor30" parent="World" unique_id=39436619 instance=ExtResource("1_fpaqb")]
+position = Vector2(144, 144)
+
+[node name="rockFloor31" parent="World" unique_id=672587238 instance=ExtResource("1_fpaqb")]
+position = Vector2(176, 144)
+
+[node name="rockFloor32" parent="World" unique_id=642440608 instance=ExtResource("1_fpaqb")]
+position = Vector2(208, 144)
+
+[node name="rockFloor33" parent="World" unique_id=1720932365 instance=ExtResource("1_fpaqb")]
+position = Vector2(240, 144)
+
+[node name="rockFloor34" parent="World" unique_id=607087720 instance=ExtResource("1_fpaqb")]
+position = Vector2(272, 144)
+
+[node name="rockFloor35" parent="World" unique_id=1109764938 instance=ExtResource("1_fpaqb")]
+position = Vector2(304, 144)
+
+[node name="rockFloor36" parent="World" unique_id=1604670667 instance=ExtResource("1_fpaqb")]
+position = Vector2(336, 144)
+
+[node name="rockFloor37" parent="World" unique_id=470703303 instance=ExtResource("1_fpaqb")]
+position = Vector2(-272, 144)
+
+[node name="rockFloor38" parent="World" unique_id=652414109 instance=ExtResource("1_fpaqb")]
+position = Vector2(-240, 144)
+
+[node name="rockFloor39" parent="World" unique_id=1667729795 instance=ExtResource("1_fpaqb")]
+position = Vector2(-208, 144)
+
+[node name="rockFloor40" parent="World" unique_id=143878985 instance=ExtResource("1_fpaqb")]
+position = Vector2(-176, 144)
+
+[node name="rockFloor41" parent="World" unique_id=732344354 instance=ExtResource("1_fpaqb")]
+position = Vector2(-144, 144)
+
+[node name="rockFloor42" parent="World" unique_id=2138026463 instance=ExtResource("1_fpaqb")]
+position = Vector2(-112, 144)
+
+[node name="rockFloor43" parent="World" unique_id=238554278 instance=ExtResource("1_fpaqb")]
+position = Vector2(-80, 144)
+
+[node name="rockFloor44" parent="World" unique_id=1357066977 instance=ExtResource("1_fpaqb")]
+position = Vector2(-48, 144)
+
+[node name="rockFloor45" parent="World" unique_id=961743660 instance=ExtResource("1_fpaqb")]
+position = Vector2(-16, 144)
+
+[node name="rockFloor46" parent="World" unique_id=717751870 instance=ExtResource("1_fpaqb")]
+position = Vector2(16, 144)
+
+[node name="rockFloor47" parent="World" unique_id=1904838292 instance=ExtResource("1_fpaqb")]
+position = Vector2(-48, 80)
+
+[node name="rockFloor48" parent="World" unique_id=953739341 instance=ExtResource("1_fpaqb")]
+position = Vector2(560, 16)
+
+[node name="rockFloor49" parent="World" unique_id=672095127 instance=ExtResource("1_fpaqb")]
+position = Vector2(496, 80)
+
+[node name="mcGreen1" parent="World" unique_id=867818532 instance=ExtResource("2_tay04")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=61006098]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2033737129]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_tay04")
+player_path = NodePath("../../World/mcGreen1")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=371339583]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=449795139]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=548748077]
+layout_mode = 2
+text = "HP"
+
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1128020554]
+layout_mode = 2
+
+[node name="HPValueLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=567272349]
+layout_mode = 2
+
+[node name="PotionLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=367745255]
+layout_mode = 2
+text = "POTIONS"
+
+[node name="PotionPips" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1666726323]
+layout_mode = 2
+
+[node name="PotionTriggerLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=2035892284]
+layout_mode = 2
+text = "Trigger CD"
+
+[node name="PotionTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=687752759]
+layout_mode = 2
+
+[node name="DashLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=2027893903]
+layout_mode = 2
+text = "DASH"
+
+[node name="DashPips" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=967934966]
+layout_mode = 2
+
+[node name="DashTriggerLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=177017081]
+layout_mode = 2
+text = "Trigger CD"
+
+[node name="DashTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=681185194]
+layout_mode = 2
+
+[node name="DashRecoveryLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=2023309422]
+layout_mode = 2
+text = "Recharge"
+
+[node name="DashRecoveryBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=363778563]
+layout_mode = 2
+
+[node name="JumpLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1006300746]
+layout_mode = 2
+text = "JUMP"
+
+[node name="JumpPips" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1579177338]
+layout_mode = 2
+
+[node name="JumpTriggerLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1283503163]
+layout_mode = 2
+text = "Trigger CD"
+
+[node name="JumpTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=572732166]
+layout_mode = 2
