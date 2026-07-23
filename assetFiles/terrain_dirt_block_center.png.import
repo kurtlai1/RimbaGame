@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbed4dn5aipti"
-path="res://.godot/imported/spritesheet-characters-double.png-e79e1ee10661128321c4ca2c31b8de4c.ctex"
+uid="uid://6jh0rxlrtcbg"
+path="res://.godot/imported/terrain_dirt_block_center.png-b7d49f92a9aad38c9ffc751621f8d1b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetFiles/spritesheet-characters-double.png"
-dest_files=["res://.godot/imported/spritesheet-characters-double.png-e79e1ee10661128321c4ca2c31b8de4c.ctex"]
+source_file="res://assetFiles/terrain_dirt_block_center.png"
+dest_files=["res://.godot/imported/terrain_dirt_block_center.png-b7d49f92a9aad38c9ffc751621f8d1b6.ctex"]
 
 [params]
 

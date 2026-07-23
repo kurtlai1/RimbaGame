@@ -1,26 +1,15 @@
-[gd_scene format=3 uid="uid://jburwd47s5oi"]
+[gd_scene format=3 uid="uid://b1f3x7ml8len4"]
 
-[ext_resource type="Script" uid="uid://bjdtll42mciof" path="res://mcAsset/mc_green_1.gd" id="1_h047b"]
-[ext_resource type="Texture2D" uid="uid://cu651hic5ts10" path="res://assetFiles/character_green_idle.png" id="1_rb0yh"]
-[ext_resource type="Script" uid="uid://q74wmegc7npa" path="res://mcAsset/Health.gd" id="3_uv54i"]
+[ext_resource type="Texture2D" uid="uid://6jh0rxlrtcbg" path="res://assetFiles/terrain_dirt_block_center.png" id="1_465td"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ladg"]
-size = Vector2(30, 37)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uv54i"]
+size = Vector2(32, 32)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=867818532]
-script = ExtResource("1_h047b")
+[node name="StaticBody2D" type="StaticBody2D" unique_id=62646710]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1448119272]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_1ladg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=332994589]
+shape = SubResource("RectangleShape2D_uv54i")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1137216266]
-position = Vector2(0, -8)
-scale = Vector2(0.1875, 0.1875)
-texture = ExtResource("1_rb0yh")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1170525869]
-zoom = Vector2(2, 2)
-
-[node name="Health" type="Node" parent="." unique_id=1495282258]
-script = ExtResource("3_uv54i")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1289290460]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_465td")

@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+@onready var animated_sprite = $AnimatedSprite2D
+
 # BASIC MOVEMENT
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
+const GRAVITY = 980.0
 
 # HP POTION
 const POTION_MAX_COUNT = 5
@@ -10,7 +13,7 @@ const POTION_HEAL_PERCENT = 0.25
 const POTION_CONSUME_DURATION = 1.0
 const POTION_TRIGGER_CD = 5.0
 
-@onready var health: Health = $Health
+@onready var health = $Health
 
 # DASHING
 const DASH_SPEED = 600.0
@@ -50,11 +53,13 @@ func _ready() -> void:
 	jump_count = max_jump_count
 	potion_count = POTION_MAX_COUNT
 	health.died.connect(_on_died)
+	# print("ready")
 
 func _physics_process(delta: float) -> void:
+	# print("physics working")
 	# Add the gravity.
-	if not is_on_floor() and not is_dashing and not is_hovering:
-		velocity += get_gravity() * delta
+	if !is_on_floor() and !is_dashing and !is_hovering:
+		velocity.y += GRAVITY * delta
 		
 	if is_hovering:
 		hover_timer -= delta
@@ -82,8 +87,12 @@ func _physics_process(delta: float) -> void:
 		potion_trigger_timer -= delta
 
 	var direction := Input.get_axis("mcLeft", "mcRight")
+	# for action in ["mcLeft", "mcRight", "mcJump", "mcDash", "mcPotion"]:
+	#	if Input.is_action_pressed(action):
+	#		print(action)
 	if direction != 0:
 		facing_direction = sign(direction)
+		animated_sprite.flip_h = facing_direction < 0
  
 	if Input.is_action_just_pressed("mcDash") and can_dash():
 		start_dash(direction)
@@ -116,6 +125,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
  
 	move_and_slide()
+	update_animation()
  
 func can_dash() -> bool:
 	return dash_count > 0 and dash_trigger_timer <= 0.0 and not is_dashing and not is_healing
@@ -147,7 +157,8 @@ func start_dash(input_direction: float) -> void:
 	dash_direction = Vector2(dir_x, 0).normalized()
  
 	set_invulnerable(true)
-	get_tree().create_timer(DASH_IFRAMES).timeout.connect(func(): set_invulnerable(false))
+	await get_tree().create_timer(DASH_IFRAMES).timeout
+	set_invulnerable(false)
 	# TODO: animation
  
 func end_dash() -> void:
@@ -193,3 +204,20 @@ func is_injured() -> bool:
 func set_invulnerable(value: bool) -> void:
 	is_invulnerable = value
 	# TODO: hurtbox
+
+func play_animation(animName: String) -> void:
+	if animated_sprite.animation != animName:
+		animated_sprite.play(animName)
+
+func update_animation() -> void:
+	if health.is_dead:
+		return
+	
+	if is_dashing:
+		play_animation("dash")
+	elif not is_on_floor():
+		play_animation("jump")
+	elif abs(velocity.x) > 0:
+		play_animation("move")
+	else:
+		play_animation("idle")
