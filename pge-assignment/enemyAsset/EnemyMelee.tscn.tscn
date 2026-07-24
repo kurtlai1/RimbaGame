@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dex0vpm3skx8p"]
+
+[ext_resource type="Script" uid="uid://dq1ivifw0n1lr" path="res://enemyAsset/enemy_melee.tscn.gd" id="1_6txi7"]
+[ext_resource type="Texture2D" uid="uid://dqby3fwpbsy67" path="res://assetFiles/EnemySpriteSheet.png" id="2_xomeb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc8hw"]
+atlas = ExtResource("2_xomeb")
+region = Rect2(2, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r27yn"]
+atlas = ExtResource("2_xomeb")
+region = Rect2(30, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfy4p"]
+atlas = ExtResource("2_xomeb")
+region = Rect2(58, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je5bf"]
+atlas = ExtResource("2_xomeb")
+region = Rect2(86, 0, 28, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dramy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc8hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r27yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfy4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je5bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tahel"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrr6q"]
+radius = 104.307236
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6txi7"]
+radius = 7.99826
+height = 32.326744
+
+[node name="EnemyMelee" type="CharacterBody2D" unique_id=176105295]
+script = ExtResource("1_6txi7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1845198740]
+position = Vector2(0, -3.0000005)
+scale = Vector2(1.5357141, 1.2499999)
+sprite_frames = SubResource("SpriteFrames_dramy")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2092178103]
+shape = SubResource("CircleShape2D_tahel")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1282278365]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1070808649]
+visible = false
+shape = SubResource("CircleShape2D_lrr6q")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=2050913297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1036767682]
+rotation = -1.5499383
+shape = SubResource("CapsuleShape2D_6txi7")
