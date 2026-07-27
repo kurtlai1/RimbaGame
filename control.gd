@@ -6,6 +6,7 @@ var player: mcGreen1
 @onready var pips_container: HBoxContainer = $DashPips
 @onready var trigger_bar: ProgressBar = $TriggerBar
 @onready var recovery_bar: ProgressBar = $RecoveryBar
+@onready var attack_trigger_bar: ProgressBar = $AttackTriggerBar
  
 const PIP_SIZE = Vector2(16, 16)
 const PIP_GAP = 4
@@ -18,13 +19,16 @@ func _ready() -> void:
 	trigger_bar.max_value = player.DASH_TRIGGER_CD
 	recovery_bar.min_value = 0.0
 	recovery_bar.max_value = player.DASH_RECOVERY
- 
+	attack_trigger_bar.min_value = 0.0
+	attack_trigger_bar.max_value = player.ATTACK_TRIGGER_CD
+	
 	_build_pips()
  
  
 func _process(_delta: float) -> void:
 	_update_pips()
 	_update_bars()
+	_update_attack_bar()
  
  
 func _build_pips() -> void:
@@ -58,3 +62,7 @@ func _update_bars() -> void:
 	recovery_bar.visible = player.dash_count < player.max_dash_count
 	if recovery_bar.visible:
 		recovery_bar.value = player.DASH_RECOVERY - player.dash_recovery_timer
+
+func _update_attack_bar() -> void:
+	attack_trigger_bar.value = player.ATTACK_TRIGGER_CD - player.attack_trigger_timer
+	attack_trigger_bar.visible = player.attack_trigger_timer > 0.0

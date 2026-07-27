@@ -20,6 +20,8 @@ var player: CharacterBody2D
 @onready var potion_pips: HBoxContainer = $MarginContainer/VBoxContainer/PotionPips
 @onready var potion_trigger_bar: ProgressBar = $MarginContainer/VBoxContainer/PotionTriggerBar
  
+# ChargeAttack indicators
+@onready var charge_bar: ProgressBar = $MarginContainer/VBoxContainer/ChargeBar
 const PIP_SIZE = Vector2(16, 16)
 const PIP_GAP = 4
  
@@ -46,6 +48,9 @@ func _ready() -> void:
 	
 	player.health.health_changed.connect(_on_health_changed)
 	_on_health_changed(player.health.current_hp, player.health.max_hp)
+	
+	charge_bar.min_value = 0.0
+	charge_bar.max_value = player.CHARGE_MAX_DURATION
  
  
 func _process(_delta: float) -> void:
@@ -55,6 +60,7 @@ func _process(_delta: float) -> void:
 	_update_dash_bars()
 	_update_jump_bar()
 	_update_potion_bar()
+	_update_charge_bar()
  
 func _on_health_changed(current: int, max_hp: int) -> void:
 	hp_bar.max_value = max_hp
@@ -98,3 +104,17 @@ func _update_jump_bar() -> void:
 func _update_potion_bar() -> void:
 	potion_trigger_bar.value = player.POTION_TRIGGER_CD - player.potion_trigger_timer
 	potion_trigger_bar.visible = player.potion_trigger_timer > 0.0
+
+func _update_charge_bar() -> void:
+	if player.is_holding_attack:
+		# Charging: fills up 0 -> 1 as you hold the button
+		charge_bar.value = player.attack_hold_timer
+		charge_bar.visible = true
+		charge_bar.modulate = Color.WHITE
+	elif player.charged_attack_trigger_timer > 0.0:
+		# Cooldown: fills up 0 -> 1 as it recovers after firing
+		charge_bar.value = 1.0 - (player.charged_attack_trigger_timer / player.CHARGED_ATTACK_TRIGGER_CD)
+		charge_bar.visible = true
+		charge_bar.modulate = Color(0.5, 0.5, 0.5) # dimmer while on cooldown, so it reads differently from charging
+	else:
+		charge_bar.visible = false

@@ -216,12 +216,12 @@ text = "Trigger CD"
 [node name="DashTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=681185194]
 layout_mode = 2
 
+[node name="DashRecoveryBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=363778563]
+layout_mode = 2
+
 [node name="DashRecoveryLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=2023309422]
 layout_mode = 2
 text = "Recharge"
-
-[node name="DashRecoveryBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=363778563]
-layout_mode = 2
 
 [node name="JumpLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1006300746]
 layout_mode = 2
@@ -235,4 +235,18 @@ layout_mode = 2
 text = "Trigger CD"
 
 [node name="JumpTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=572732166]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=137660980]
+layout_mode = 2
+text = "Attack CD"
+
+[node name="AttackTriggerBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1696134317]
+layout_mode = 2
+
+[node name="ChargeAttackLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=2026993780]
+layout_mode = 2
+text = "ChargeAttack"
+
+[node name="ChargeBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=643591955]
 layout_mode = 2
