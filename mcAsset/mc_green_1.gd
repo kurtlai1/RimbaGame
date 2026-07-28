@@ -169,14 +169,14 @@ func _physics_process(delta: float) -> void:
 
 	if is_holding_attack:
 		attack_hold_timer = min(attack_hold_timer + delta, CHARGE_MAX_DURATION)
-		if attack_hold_timer >= CHARGE_TAP_THRESHOLD:
+		if attack_hold_timer >= CHARGE_TAP_THRESHOLD and charged_attack_trigger_timer <= 0.0:
 			is_charging = true
 
 	if Input.is_action_just_released("mcAttack") and is_holding_attack:
-		if attack_hold_timer < CHARGE_TAP_THRESHOLD:
-			start_attack() # tap = Normal Attack
+		if is_charging:
+			start_charged_attack() 
 		else:
-			start_charged_attack() # held past the threshold = Charged Attack
+			start_attack()
 		is_holding_attack = false
 		is_charging = false
 		attack_hold_timer = 0.0
@@ -221,7 +221,7 @@ func can_use_potion() -> bool:
 		and not is_dashing and not health.is_dead and not is_full_health()
 
 func can_start_attack_input() -> bool:
-	return attack_trigger_timer <= 0.0 and charged_attack_trigger_timer <= 0.0 \
+	return attack_trigger_timer <= 0.0 \
 		and not is_attacking and not is_charge_resolving and not is_holding_attack \
 		and not is_healing and not is_dashing and not health.is_dead
 
@@ -250,7 +250,6 @@ func start_attack() -> void:
 		hover_timer = ATTACK_HOVER_DURATION
 		velocity.y = 0.0
 		is_air_attack_locked = true
-	# TODO: animation
 
 func end_attack() -> void:
 	is_attacking = false
@@ -261,7 +260,7 @@ func start_charged_attack() -> void:
 	charge_resolve_timer = CHARGED_RESOLVE_DURATION
 	charged_attack_trigger_timer = CHARGED_ATTACK_TRIGGER_CD
 
-	# Scale 150% ATK at zero charge up to 450% ATK at CHARGE_MAX_DURATION.
+	# Scale 150% ATK at zero charge up to 300% ATK at CHARGE_MAX_DURATION.
 	var charge_percent := CHARGED_DAMAGE_MIN_PERCENT + \
 		(CHARGED_DAMAGE_MAX_PERCENT - CHARGED_DAMAGE_MIN_PERCENT) \
 		* (attack_hold_timer / CHARGE_MAX_DURATION)

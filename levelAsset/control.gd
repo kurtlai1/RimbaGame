@@ -117,8 +117,7 @@ func _update_attack_bar() -> void:
 	attack_trigger_bar.visible = player.attack_trigger_timer > 0.0
 
 func _update_charge_bar() -> void:
-	if player.is_holding_attack:
-		# Charging: fills up 0 -> 1 as you hold the button
+	if player.is_charging:
 		charge_bar.value = player.attack_hold_timer - player.CHARGE_TAP_THRESHOLD
 		charge_bar.visible = true
 		charge_bar.modulate = Color.WHITE
