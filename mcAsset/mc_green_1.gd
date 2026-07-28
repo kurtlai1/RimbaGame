@@ -47,7 +47,7 @@ const MELEE_HITBOX_OFFSET_X = 14.0 # distance in front of the character
 const CHARGE_TAP_THRESHOLD = 0.15 # holds shorter than this count as a tap
 const CHARGE_MAX_DURATION = 3.0 # holding longer than this doesn't add more damage
 const CHARGED_DAMAGE_MIN_PERCENT = 1.5 # 150% of ATK at minimum charge
-const CHARGED_DAMAGE_MAX_PERCENT = 4.5 # 450% of ATK at max charge
+const CHARGED_DAMAGE_MAX_PERCENT = 3 # 300% of ATK at max charge
 const CHARGED_RESOLVE_DURATION = 0.2 # the swing itself, after release - movement locked for this long
 const CHARGED_ATTACK_TRIGGER_CD = 1.0
 
