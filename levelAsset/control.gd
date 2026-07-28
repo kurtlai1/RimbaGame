@@ -19,7 +19,10 @@ var player: CharacterBody2D
 # Potion indicators
 @onready var potion_pips: HBoxContainer = $MarginContainer/VBoxContainer/PotionPips
 @onready var potion_trigger_bar: ProgressBar = $MarginContainer/VBoxContainer/PotionTriggerBar
- 
+  
+# Attack indicators
+@onready var attack_trigger_bar: ProgressBar = $MarginContainer/VBoxContainer/AttackTriggerBar
+
 # ChargeAttack indicators
 @onready var charge_bar: ProgressBar = $MarginContainer/VBoxContainer/ChargeBar
 const PIP_SIZE = Vector2(16, 16)
@@ -49,8 +52,11 @@ func _ready() -> void:
 	player.health.health_changed.connect(_on_health_changed)
 	_on_health_changed(player.health.current_hp, player.health.max_hp)
 	
+	attack_trigger_bar.min_value = 0.0
+	attack_trigger_bar.max_value = player.ATTACK_TRIGGER_CD
+
 	charge_bar.min_value = 0.0
-	charge_bar.max_value = player.CHARGE_MAX_DURATION
+	charge_bar.max_value = player.CHARGE_MAX_DURATION - player.CHARGE_TAP_THRESHOLD
  
  
 func _process(_delta: float) -> void:
@@ -60,6 +66,7 @@ func _process(_delta: float) -> void:
 	_update_dash_bars()
 	_update_jump_bar()
 	_update_potion_bar()
+	_update_attack_bar()
 	_update_charge_bar()
  
 func _on_health_changed(current: int, max_hp: int) -> void:
@@ -105,10 +112,14 @@ func _update_potion_bar() -> void:
 	potion_trigger_bar.value = player.POTION_TRIGGER_CD - player.potion_trigger_timer
 	potion_trigger_bar.visible = player.potion_trigger_timer > 0.0
 
+func _update_attack_bar() -> void:
+	attack_trigger_bar.value = player.ATTACK_TRIGGER_CD - player.attack_trigger_timer
+	attack_trigger_bar.visible = player.attack_trigger_timer > 0.0
+
 func _update_charge_bar() -> void:
 	if player.is_holding_attack:
 		# Charging: fills up 0 -> 1 as you hold the button
-		charge_bar.value = player.attack_hold_timer
+		charge_bar.value = player.attack_hold_timer - player.CHARGE_TAP_THRESHOLD
 		charge_bar.visible = true
 		charge_bar.modulate = Color.WHITE
 	elif player.charged_attack_trigger_timer > 0.0:

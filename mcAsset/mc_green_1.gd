@@ -44,7 +44,7 @@ const MELEE_HITBOX_OFFSET_X = 14.0 # distance in front of the character
 # CHARGED ATTACK
 # Same mcAttack button as Normal Attack: release before CHARGE_TAP_THRESHOLD
 # = Normal Attack (tap), release after it = Charged Attack (hold).
-const CHARGE_TAP_THRESHOLD = 0.15 # holds shorter than this count as a tap
+const CHARGE_TAP_THRESHOLD = 0.3 # holds shorter than this count as a tap
 const CHARGE_MAX_DURATION = 3.0 # holding longer than this doesn't add more damage
 const CHARGED_DAMAGE_MIN_PERCENT = 1.5 # 150% of ATK at minimum charge
 const CHARGED_DAMAGE_MAX_PERCENT = 3 # 300% of ATK at max charge
