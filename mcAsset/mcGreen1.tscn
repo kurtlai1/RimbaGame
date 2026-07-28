@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://q74wmegc7npa" path="res://mcAsset/Health.gd" id="3_uv54i"]
 [ext_resource type="Script" uid="uid://dmpfdfaqbsg7o" path="res://combatAsset/hurtbox.gd" id="4_hurtbox"]
 [ext_resource type="Script" uid="uid://cq7gtqwag8k7g" path="res://combatAsset/hitbox.gd" id="5_hitbox"]
-[ext_resource type="Texture2D" uid="uid://dy18xxt5o3sdk" path="res://assetFiles/43.png" id="7_5h62q"]
 [ext_resource type="Texture2D" uid="uid://ce7nggnerqft1" path="res://assetFiles/286.png" id="8_n6t7x"]
 [ext_resource type="Texture2D" uid="uid://0b25tm4cnlqo" path="res://assetFiles/53.png" id="9_kxn26"]
 
@@ -84,10 +83,6 @@ size = Vector2(20, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_uyrr2"]
 radius = 27.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2q0b"]
-atlas = ExtResource("7_5h62q")
-region = Rect2(1872, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_aidfr"]
 atlas = ExtResource("8_n6t7x")
 region = Rect2(0, 192, 64, 64)
@@ -127,9 +122,6 @@ region = Rect2(512, 192, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_5wkjx"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2q0b")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aidfr")
 }, {
@@ -294,7 +286,7 @@ position = Vector2(14.000001, -2)
 scale = Vector2(0.58, 0.58)
 sprite_frames = SubResource("SpriteFrames_5wkjx")
 animation = &"attack"
-frame = 9
+frame = 8
 frame_progress = 1.0
 
 [node name="ChargeAttackVFX" type="AnimatedSprite2D" parent="." unique_id=443053536]
