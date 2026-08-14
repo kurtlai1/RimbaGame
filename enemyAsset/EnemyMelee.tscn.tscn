@@ -64,7 +64,6 @@ shape = SubResource("CircleShape2D_tahel")
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1282278365]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1070808649]
-visible = false
 shape = SubResource("CircleShape2D_lrr6q")
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=2050913297]
